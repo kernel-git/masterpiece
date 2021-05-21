@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag '_header' %>
+
+<div class="header__wrapper">
+  <div class="header__panel">
+    <%= image_tag 'logo.png', class: "header__logo-wrapper" %>
+    <div class="header__sections-wrapper">
+      <%= link_to 'Posts', posts_url, class: "header__sections-item" %>
+    </div>
+  </div>
+  <div class="header__buttons-wrapper ">
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_url, method: :delete, class: "link-button" %>
+    <% else %>
+      <%= link_to 'Sign up', new_user_registration_url, class: "link-button" %>
+      <%= link_to 'Sign in', new_user_session_url, class: "link-button" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h1>All posts</h1>
+<div class="posts__wrapper">
+  <% @posts.each do |post| %>
+    <div class="posts__card">
+      <div class="card__title-wrapper">
+        <div class="card__title">
+          <%= post.title %>
+        </div>
+        <div class="card__author">
+          <%= post.user_id %>
+        </div>
+      </div>
+      <div class="card__body">
+        <%= post.message %>
+      </div>
+    </div>
+  <% end %>
+  <% if @posts.empty? %>
+    <%= Empty %>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<h1>Edit post</h1>
+<%= form_with(model: @post, method: 'patch') do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :user_id %>
+  <%= f.number_field :user_id %>
+  <%= f.label :message %>
+  <%= f.text_area :message, size: "60x10" %>
+
+  <%= f.submit %>
+<% end %>
