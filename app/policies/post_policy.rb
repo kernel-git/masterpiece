@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostPolicy
   attr_reader :user, :post
 
@@ -9,5 +11,4 @@ class PostPolicy
   def change?
     @post.user == @user
   end
-
 end

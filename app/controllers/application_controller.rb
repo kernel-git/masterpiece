@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include Pundit
 
@@ -9,15 +11,15 @@ class ApplicationController < ActionController::Base
   rescue_from AbstractController::ActionNotFound, with: :not_found
   rescue_from ActionController::ParameterMissing, with: :request_invalid
 
-  def access_denied(exception)
+  def access_denied(_exception)
     redirect_to static_pages_url(page: 'access-denied')
   end
 
-  def not_found(exception)
+  def not_found(_exception)
     redirect_to static_pages_url(page: 'not-found-404')
   end
 
-  def request_invalid(exception)
+  def request_invalid(_exception)
     redirect_to static_pages_url(page: 'request-invalid')
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rake::Task['db:reset'].invoke
 
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each do |seed|
