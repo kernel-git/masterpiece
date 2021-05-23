@@ -2,9 +2,9 @@ require 'faker'
 
 class PostsSeeds
   def perform
-    posts = [*1..5].map do
+    posts = [*1..5].map do |index|
       Post.new(
-        user_id: 1,
+        user_id: index <= 3 ? 1 : 2,
         title: Faker::Lorem.words(number: [*2..6].sample).join(' '),
         message: Faker::Lorem.paragraphs(number: [*2..6].sample).join(' ')
       )

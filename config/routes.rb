@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
   }
   resources :posts
+
+  root 'posts#index'
+  get '/:page', to: 'static_pages#show', as: 'static_pages'
 end

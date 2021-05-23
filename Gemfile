@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # For authenticatiton
 gem 'devise', '~> 4.7.3'
 
+# For authorization
+gem "pundit"
+
 # For creating random seed data
 gem 'faker', '~> 2.17.0'
 

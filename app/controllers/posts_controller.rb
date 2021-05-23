@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: :index
 
   def index
     @posts = Post.all
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authorize @post, :change?
   end
 
   def update
@@ -36,6 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize @post, :change?
     if @post.destroy
       redirect_to posts_url
     else

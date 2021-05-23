@@ -1,7 +1,7 @@
 <h1>All posts</h1>
 <div class="posts__wrapper">
   <% @posts.each do |post| %>
-    <div class="posts__card">
+    <%= link_to post_url(post), class: "posts__card" do %>
       <div class="card__title-wrapper">
         <div class="card__title">
           <%= post.title %>
@@ -13,7 +13,7 @@
       <div class="card__body">
         <%= post.message %>
       </div>
-    </div>
+    <% end %>
   <% end %>
   <% if @posts.empty? %>
     <%= Empty %>

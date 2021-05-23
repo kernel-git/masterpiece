@@ -1,4 +1,6 @@
 <h1>Post Info</h1>
+<%= link_to "Edit", edit_post_url(@post), class: "link-button" %>
+<%= link_to "Delete", post_url(@post), method: :delete, class: "link-button" %>
 <div class="post-detailed__wrapper">
   <div class="post-detailed__title-wrapper">
     <div class="post-detailed__title">
