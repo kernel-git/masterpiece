@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   protect_from_forgery with: :null_session
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from Pundit::NotAuthorizedError, with: :access_denied
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
@@ -21,5 +22,11 @@ class ApplicationController < ActionController::Base
 
   def request_invalid(_exception)
     redirect_to static_pages_url(page: 'request-invalid')
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
 end
