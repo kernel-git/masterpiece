@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   }
   resources :posts
 
-  root 'posts#index'
+  root 'static_pages#show', page: 'home'
   get '/:page', to: 'static_pages#show', as: 'static_pages'
 end

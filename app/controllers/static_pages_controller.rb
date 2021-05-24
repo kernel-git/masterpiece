@@ -2,6 +2,7 @@
 
 class StaticPagesController < ApplicationController
   STATIC_PAGES = {
+    'home': 'home',
     'not-found-404': 'not_found_404',
     'access-denied': 'access_denied',
     'request-invalid': 'request_invalid'
