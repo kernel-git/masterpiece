@@ -1,16 +1,24 @@
-<h1>Post Info</h1>
-<%= link_to "Edit", edit_post_url(@post), class: "link-button" %>
-<%= link_to "Delete", post_url(@post), method: :delete, class: "link-button" %>
-<div class="post-detailed__wrapper">
-  <div class="post-detailed__title-wrapper">
-    <div class="post-detailed__title">
+<div class="posts posts__title-wrapper">
+  <div class="posts posts__title">Post info</div>
+  <%= link_to "Edit", edit_post_url(@post), class: "link-button" %>
+  <%= link_to "Delete", post_url(@post), method: :delete, class: "link-button" %>
+</div>
+
+
+<div class="card card__title-wrapper">
+  <div class="card card__title">
+    <div class="card card__text">
       <%= @post.title %>
     </div>
-    <div class="post-detailed__author">
-      <%= @post.user_id %>
+  </div>
+  <div class="card card__author">
+    <div class="card card__text">
+      <%= @user.nickname %>
     </div>
   </div>
-  <div class="post-detailed__body">
+</div>
+<div class="card card__body">
+  <div class="card card__text">
     <%= @post.message %>
   </div>
 </div>

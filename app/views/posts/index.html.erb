@@ -1,18 +1,26 @@
-<h1>All posts</h1>
-<%= link_to "New", new_post_url, class: "link-button" %>
-<div class="posts__wrapper">
+<div class="posts posts__title-wrapper">
+  <div class="posts posts__title">All posts</div>
+  <%= link_to "New", new_post_url, class: "link-button" %>
+</div>
+<div class="posts posts__wrapper">
   <% @posts.each do |post| %>
-    <%= link_to post_url(post), class: "posts__card" do %>
-      <div class="card__title-wrapper">
-        <div class="card__title">
-          <%= post.title %>
+    <%= link_to post_url(post), class: "posts posts__card" do %>
+      <div class="card card__title-wrapper">
+        <div class="card card__title">
+          <div class="card card__text">
+            <%= post.title %>
+          </div>
         </div>
-        <div class="card__author">
-          <%= post.user_id %>
+        <div class="card card__author">
+          <div class="card card__text">
+            <%= @user_names[post.user_id] %>
+          </div>
         </div>
       </div>
-      <div class="card__body">
-        <%= post.message %>
+      <div class="card card__body">
+        <div class="card card__text">
+          <%= post.message %>
+        </div>
       </div>
     <% end %>
   <% end %>
